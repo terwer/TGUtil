@@ -14,6 +14,8 @@
 		9FDEFE401C88134A005C833A /* TGUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDEFE3F1C88134A005C833A /* TGUtilTests.m */; };
 		9FDEFE4B1C88134A005C833A /* TGUtilUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDEFE4A1C88134A005C833A /* TGUtilUITests.m */; };
 		9FDEFE5B1C8814E4005C833A /* TGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDEFE5A1C8814E4005C833A /* TGViewController.m */; };
+		9FDEFE5D1C8817CA005C833A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9FDEFE5C1C8817CA005C833A /* README.md */; };
+		9FDEFE631C881834005C833A /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDEFE621C881834005C833A /* NSString+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		9FDEFE4C1C88134A005C833A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FDEFE591C8814E4005C833A /* TGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGViewController.h; sourceTree = "<group>"; };
 		9FDEFE5A1C8814E4005C833A /* TGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGViewController.m; sourceTree = "<group>"; };
+		9FDEFE5C1C8817CA005C833A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9FDEFE611C881834005C833A /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extension.h"; path = "Categories/NSString+Extension.h"; sourceTree = "<group>"; };
+		9FDEFE621C881834005C833A /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extension.m"; path = "Categories/NSString+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +104,7 @@
 		9FDEFE241C881349005C833A /* TGUtil */ = {
 			isa = PBXGroup;
 			children = (
+				9FDEFE641C88185E005C833A /* Examples */,
 				9FDEFE581C8813F1005C833A /* Categories */,
 				9FDEFE281C881349005C833A /* AppDelegate.h */,
 				9FDEFE291C881349005C833A /* AppDelegate.m */,
@@ -107,6 +113,7 @@
 				9FDEFE311C881349005C833A /* Assets.xcassets */,
 				9FDEFE331C881349005C833A /* LaunchScreen.storyboard */,
 				9FDEFE361C881349005C833A /* Info.plist */,
+				9FDEFE5C1C8817CA005C833A /* README.md */,
 				9FDEFE251C881349005C833A /* Supporting Files */,
 			);
 			path = TGUtil;
@@ -141,8 +148,17 @@
 		9FDEFE581C8813F1005C833A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				9FDEFE611C881834005C833A /* NSString+Extension.h */,
+				9FDEFE621C881834005C833A /* NSString+Extension.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		9FDEFE641C88185E005C833A /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FDEFE631C881834005C833A /* NSString+Extension.m in Sources */,
 				9FDEFE5B1C8814E4005C833A /* TGViewController.m in Sources */,
 				9FDEFE2A1C881349005C833A /* AppDelegate.m in Sources */,
+				9FDEFE5D1C8817CA005C833A /* README.md in Sources */,
 				9FDEFE271C881349005C833A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +510,7 @@
 				9FDEFE511C88134A005C833A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FDEFE521C88134A005C833A /* Build configuration list for PBXNativeTarget "TGUtilTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +519,7 @@
 				9FDEFE541C88134A005C833A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FDEFE551C88134A005C833A /* Build configuration list for PBXNativeTarget "TGUtilUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +528,7 @@
 				9FDEFE571C88134A005C833A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
