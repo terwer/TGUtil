@@ -1,5 +1,5 @@
 # TGUtil
-Some useful helpers with iOS developing
+Some useful helpers with iOS developing.
 
 # AppConfig
 
