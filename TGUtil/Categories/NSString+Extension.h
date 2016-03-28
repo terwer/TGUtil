@@ -2,8 +2,8 @@
 //  NSString+Extension.m
 //  YFStock
 //
-//  Created by 唐有炜 on 15/9/9.
-//  Copyright (c) 2015年 Yifa Network. All rights reserved.
+//  Created by Terwer Green on 15/9/9.
+//  Copyright (c) 2015年 www.terwer.com. All rights reserved.
 //
 
 #import "NSString+Extension.h"

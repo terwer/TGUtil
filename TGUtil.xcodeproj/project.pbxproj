@@ -36,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F4E797E1CA8FFB30075934F /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacros.h; sourceTree = "<group>"; };
+		9F4E797F1CA8FFB30075934F /* AppStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStyle.h; sourceTree = "<group>"; };
+		9F4E79801CA8FFB30075934F /* GlobalVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVariable.h; sourceTree = "<group>"; };
+		9F4E79811CA8FFB30075934F /* NotificationMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationMacros.h; sourceTree = "<group>"; };
 		9FDEFE221C881349005C833A /* TGUtil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TGUtil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDEFE261C881349005C833A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9FDEFE281C881349005C833A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +85,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F4E797D1CA8FFB30075934F /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				9F4E797E1CA8FFB30075934F /* AppMacros.h */,
+				9F4E797F1CA8FFB30075934F /* AppStyle.h */,
+				9F4E79801CA8FFB30075934F /* GlobalVariable.h */,
+				9F4E79811CA8FFB30075934F /* NotificationMacros.h */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
 		9FDEFE191C881349005C833A = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				9FDEFE641C88185E005C833A /* Examples */,
+				9F4E797D1CA8FFB30075934F /* AppConfig */,
 				9FDEFE581C8813F1005C833A /* Categories */,
 				9FDEFE281C881349005C833A /* AppDelegate.h */,
 				9FDEFE291C881349005C833A /* AppDelegate.m */,
