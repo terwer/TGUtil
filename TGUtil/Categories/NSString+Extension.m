@@ -1,44 +1,46 @@
 //
-//  NSString+Extension.h
+//  NSString+Extension.m
 //  YFStock
 //
 //  Created by Terwer Green on 15/9/9.
 //  Copyright (c) 2015年 www.terwer.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "NSString+Extension.h"
 
-@interface NSString (Extension)
+@implementation NSString (Extension)
 
-/**
- *  获取指定Size情况下，字符串value的高度（注意使用之前确保控件的font已经设置好）
- *
- *  @param font   字体的大小
- *  @param maxSize 最大Size
- *
- *  @return 返回的高度
- */
-- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize;
+#pragma mark 计算字符串大小
 
-/**
- *  获取指定宽度情况下，字符串value的高度（注意使用之前确保控件的font和width已经设置好）
- *
- *  @param font   字体的大小
- *  @param width 限制字符串显示区域的宽度
- *
- *  @return 返回的高度
- */
-- (CGFloat) heightWithFont:(UIFont *)font andWidth:(CGFloat)width;
+- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize{
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        NSDictionary *stringAttributes = [NSDictionary dictionaryWithObject:font forKey: NSFontAttributeName];
+        CGSize adjustedLabelSize = [self boundingRectWithSize:maxSize                                                      options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin
+                                                   attributes:stringAttributes context:nil].size;
+        return adjustedLabelSize;
+    }
+    else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
+        //写在这个中间的代码,都不会被编译器提示-Wdeprecated-declarations类型的警告
+        CGSize adjustedLabelSize = [self sizeWithFont:font constrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+        
+        return adjustedLabelSize;
+    }
+#pragma clang diagnostic pop
+}
 
-/**
- *  获取指定宽度情况下，字符串value的行数
- *
- *  @param font   字体的大小
- *  @param width 限制字符串显示区域的宽度
- *
- *  @return 返回的高度
- */
-- (CGFloat) lineNumbersWithFont:(UIFont *)font andWidth:(CGFloat)width;
+- (CGFloat) heightWithFont:(UIFont *)font width:(CGFloat)width;{
+    CGSize sizeToFit = [self sizeWithFont:font maxSize:CGSizeMake(width, CGFLOAT_MAX)];
+    return sizeToFit.height;
+}
+
+- (CGFloat) lineNumbersWithFont:(UIFont *)font width:(CGFloat)width{
+    //计算不换行时
+    CGSize size = [self sizeWithFont:font maxSize:CGSizeMake(width, MAXFLOAT)];
+    //计算行数
+    NSInteger lineNumbers =  size.width / width;
+    return lineNumbers;
+}
 
 @end
